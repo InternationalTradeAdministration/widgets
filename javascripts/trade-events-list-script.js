@@ -33,7 +33,7 @@
 				industry = industryList[industryIndex];
 			}
 			if (countryIndex > 0){
-				country = countryList[countryIndex][1]
+				country = countryList[countryIndex];
 			}
 			var searchParams = "country=" + country + "&industry=" + industry;
 		}
@@ -93,8 +93,8 @@
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-industry"></select>');
 				form += ('<button class="search-button" id="industry-trade-events-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="trade-events-country"></select>');
-				form += ('<button class="search-button" id="country-trade-events-button"></button></div>');
+				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-country"></select>');
+				form += ('<button class="search-button" id="country-trade-events-button"></button></div></p>');
 				document.getElementById('trade-events-form').innerHTML = form;
 				$('#industry-trade-events-button').on('click', function(){
 					$(this).addClass('search-button-clear');
@@ -111,8 +111,8 @@
 				$.each(industryList, function(val, text) {
 		      $('#trade-events-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countryList, function(val, array) {
-		      $('#trade-events-country').append( $('<option></option>').val(val).html(array[0]));
+				$.each(countryList, function(val, text) {
+		      $('#trade-events-country').append( $('<option></option>').val(val).html(text));
 		     });
 	    });
 	}
