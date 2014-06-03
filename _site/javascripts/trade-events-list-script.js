@@ -79,10 +79,10 @@
 
 	function main() { 
 	    $(document).ready(function($) {
-				if (!$("link[href='stylesheets/trade-widgets.css']").length){
-					$('<script src="javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-					$('<link href="stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
 				container += ('<div id="trade-events-form" class="form-container"></div>');
