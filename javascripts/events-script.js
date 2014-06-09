@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No Events search term entered");
+			alert("No events search term entered");
 			document.getElementById("events-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
