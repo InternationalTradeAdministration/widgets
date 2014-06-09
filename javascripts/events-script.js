@@ -14,19 +14,19 @@
 
 
 	function stopSpinner(spinner){
-		$('#events-button').removeClass('search-button-clear');
+		$('#reports-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
-	function getEvents(spinner) {
-		var keyword = document.getElementById("events-keyword").value;
-		var url = "http://api.trade.gov/trade_events/search.json?q=";
+	function getReports(spinner) {
+		var keyword = document.getElementById("reports-keyword").value;
+		var url = "http://api.trade.gov/market_research_library/search.json?q=";
 		if (keyword.length > 0){
 			url += keyword;
 		}
 		else {
-			alert("No event search term entered");
-			document.getElementById("events-results").innerHTML = "";
+			alert("No MRL search term entered");
+			document.getElementById("reports-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
 		}
@@ -37,20 +37,20 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No events were found, please try another search term.<p>"
+					list = "<p>No reports were found, please try another search term.<p>"
 				}
 				else {
-					$('#events-results').addClass('results-container');
-					var list = "<p class='results-title'>Trade Events</p>";
+					$('#reports-results').addClass('results-container');
+					var list = "<p class='results-title'>Market Research Reports</p>";
 					for (var i=0; i<=results.length-1; i++){
-						var event = results[i];
-						var event_name = event.event_name;
-						var url = event.url;
+						var report = results[i];
+						var title = report.title;
+						var url = report.url;
 						list += "<p class='results-legend'>" + title + "<br>";
 						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
 					}
 				}
-				document.getElementById("events-results").innerHTML = list;
+				document.getElementById("reports-results").innerHTML = list;
 				stopSpinner(spinner);
 			},
 			error: function(error) {
@@ -69,26 +69,26 @@
 					$('<link href="stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="events-form" class="form-container"></div>');
-				container += ('<div id="events-results" class="results-container"></div>');
-				document.getElementById('events-container').innerHTML = container;
-				$('#events-container').addClass('widget-container');
+				container += ('<div id="reports-form" class="form-container"></div>');
+				container += ('<div id="reports-results" class="results-container"></div>');
+				document.getElementById('reports-container').innerHTML = container;
+				$('#reports-container').addClass('widget-container');
 				var form = "";				
-	      form += ('<p class="widget-title">Trade Events</p>');
-				form += ('<div><input class="search-input" type="text" id="events-keyword" placeholder="Enter a search term" size="40">');
-				form += ('<button class="search-button" id="events-button"></button></div>');
-				document.getElementById('events-form').innerHTML = form;
-				$('#events-button').on('click', function(){
+	      form += ('<p class="widget-title">Market Research Reports</p>');
+				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
+				form += ('<button class="search-button" id="reports-button"></button></div>');
+				document.getElementById('reports-form').innerHTML = form;
+				$('#reports-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
-					getEvents(spinner);
+					getReports(spinner);
 					});
-				$('#events-keyword').keypress(function (e){
+				$('#reports-keyword').keypress(function (e){
 				    if(e.which == 13){
-							$('#events-button').addClass('search-button-clear');
-							target = document.getElementById('events-button');
+							$('#reports-button').addClass('search-button-clear');
+							target = document.getElementById('reports-button');
 							var spinner = new Spinner(spinnerVars).spin(target);
-							getEvents(spinner);
+							getReports(spinner);
 				    }
 				});
 	    });
