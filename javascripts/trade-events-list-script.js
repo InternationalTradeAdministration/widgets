@@ -14,28 +14,33 @@
 	var country = "";
 
 	function stopSpinner(spinner){
+	$('#event_name-trade-events-button').removeClass('search-button-clear');
 		$('#country-trade-events-button').removeClass('search-button-clear');
 		$('#industry-trade-events-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
 	function getTradeEvents(spinner){
+		var event_nameIndex = $('#trade-events-event_name').val();
 		var countryIndex = $('#trade-events-country').val();
 		var industryIndex = $('#trade-events-industry').val();
-		if (countryIndex == 0 && industryIndex == 0){
+		if (event_name == 0 && countryIndex == 0 && industryIndex == 0){
 			alert("No selection has been chosen");
 			document.getElementById("trade-events-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
 		}
 		else{
+			if (event_nameIndex > 0){
+				event_name = event_nameList[event_nameIndex];
+			}
 			if (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
 			if (countryIndex > 0){
 				country = countryList[countryIndex][1]
 			}
-			var searchParams = "country=" + country + "&industry=" + industry;
+			var searchParams = "event name=" + event_name + "country=" + country + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/trade_events/search?" + searchParams + "&callback=?";
@@ -49,7 +54,7 @@
 				}
 				else {
 					$('#trade-events-results').addClass('results-container');
-					var list = "<p>List of Events</p>";
+					var list = "<p></p>";
 					for (var i=0; i<=results.length-1; i++){
 						var event = results[i];
 						var name = event.event_name;
@@ -90,12 +95,19 @@
 				document.getElementById('trade-events-list-container').innerHTML = container;
 				$('#trade-events-list-container').addClass('widget-container');
 				var form = "";				
-	      form += ('<p class="widget-title">Trade Events List</p>');
+	      form += ('<p class="widget-title">Trade Events</p>');
+				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-event_name"></select>');
+				form += ('<button class="search-button" id="event_name-trade-events-button"></button></div></p>');
 				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-industry"></select>');
 				form += ('<button class="search-button" id="industry-trade-events-button"></button></div></p>');
 				form += ('<div class="select-input"><select class="search-input" id="trade-events-country"></select>');
 				form += ('<button class="search-button" id="country-trade-events-button"></button></div>');
 				document.getElementById('trade-events-form').innerHTML = form;
+				$('#event_name-trade-events-button').on('click', function(){
+					$(this).addClass('search-button-clear');
+					var spinner = new Spinner(spinnerVars).spin(this);
+					getTradeEvents(spinner)
+					});
 				$('#industry-trade-events-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
@@ -108,6 +120,9 @@
 					});
 
 				//populate dropdown lists
+				$.each(event_nameList, function(val, text) {
+		      $('#trade-events-event_name').append( $('<option></option>').val(val).html(text));
+		     });
 				$.each(industryList, function(val, text) {
 		      $('#trade-events-industry').append( $('<option></option>').val(val).html(text));
 		     });
