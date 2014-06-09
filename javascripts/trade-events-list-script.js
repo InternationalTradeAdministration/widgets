@@ -121,9 +121,7 @@
 					});
 
 				//populate dropdown lists
-				$.each(event_nameList, function(val, text) {
-		      $('#trade-events-event_name').append( $('<option></option>').val(val).html(text));
-		     });
+				
 				$.each(industryList, function(val, text) {
 		      $('#trade-events-industry').append( $('<option></option>').val(val).html(text));
 		     });
