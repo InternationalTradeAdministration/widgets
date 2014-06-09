@@ -10,6 +10,7 @@
 	} else {
 	     main();
 	}
+	var event_name = "";
 	var industry = "";
 	var country = "";
 
