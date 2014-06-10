@@ -17,7 +17,10 @@
 		$('#country-trade-events-button').removeClass('search-button-clear');
 		$('#industry-trade-events-button').removeClass('search-button-clear');
 		spinner.stop();	
+		$('#reports-button').removeClass('search-button-clear');
+		spinner.stop();	
 	}
+	
 
 	function getTradeEvents(spinner){
 		var countryIndex = $('#trade-events-country').val();
@@ -76,6 +79,49 @@
 			timeout:3000
 		});
 	}
+	
+	function getReports(spinner) {
+		var keyword = document.getElementById("reports-keyword").value;
+		var url = "http://api.trade.gov/market_research_library/search.json?q=";
+		if (keyword.length > 0){
+			url += keyword;
+		}
+		else {
+			alert("No MRL search term entered");
+			document.getElementById("reports-results").innerHTML = "";
+			stopSpinner(spinner);
+			return;
+		}
+		url += "&callback=?";
+		$.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(feed){
+				var results = feed.results;
+				if (results.length == 0){
+					list = "<p>No reports were found, please try another search term.<p>"
+				}
+				else {
+					$('#reports-results').addClass('results-container');
+					var list = "<p class='results-title'>Market Research Reports</p>";
+					for (var i=0; i<=results.length-1; i++){
+						var report = results[i];
+						var title = report.title;
+						var url = report.url;
+						list += "<p class='results-legend'>" + title + "<br>";
+						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
+					}
+				}
+				document.getElementById("reports-results").innerHTML = list;
+				stopSpinner(spinner);
+			},
+			error: function(error) {
+				stopSpinner(spinner);
+				alert("Error retriving events, please try again");
+			},
+			timeout:3000
+		});
+	}
 
 	function main() { 
 	    $(document).ready(function($) {
@@ -115,6 +161,27 @@
 		      $('#trade-events-country').append( $('<option></option>').val(val).html(array[0]));
 		     });
 	    });
+	    var container = "";
+				container += ('<div id="reports-form" class="form-container"></div>');
+				container += ('<div id="reports-results" class="results-container"></div>');
+				document.getElementById('reports-container').innerHTML = container;
+				$('#reports-container').addClass('widget-container');
+				var form = "";				
+	      form += ('<p class="widget-title">Market Research Reports</p>');
+				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
+				form += ('<button class="search-button" id="reports-button"></button></div>');
+				document.getElementById('reports-form').innerHTML = form;
+				$('#reports-button').on('click', function(){
+					$(this).addClass('search-button-clear');
+					var spinner = new Spinner(spinnerVars).spin(this);
+					getReports(spinner);
+					});
+				$('#reports-keyword').keypress(function (e){
+				    if(e.which == 13){
+							$('#reports-button').addClass('search-button-clear');
+							target = document.getElementById('reports-button');
+							var spinner = new Spinner(spinnerVars).spin(target);
+							getReports(spinner);
 	}
 
 })();
