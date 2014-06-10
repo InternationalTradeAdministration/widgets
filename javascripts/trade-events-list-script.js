@@ -39,7 +39,7 @@
 			if (countryIndex > 0){
 				country = countryList[countryIndex][1]
 			}
-			var searchParams = "event name=" + event_name + "country=" + country + "&industry=" + industry;
+			var searchParams = "country=" + country + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/trade_events/search?" + searchParams + "&callback=?";
