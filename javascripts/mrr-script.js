@@ -86,8 +86,8 @@
 				var container = "";
 				container += ('<div id="trade-events-form" class="form-container"></div>');
 				container += ('<div id="trade-events-results" class="results-container"></div>');			
-				document.getElementById('trade-events-list-container').innerHTML = container;
-				$('#trade-events-list-container').addClass('widget-container');
+				document.getElementById('mrr-container').innerHTML = container;
+				$('#mrr-container').addClass('widget-container');
 				var form = "";				
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-industry"></select>');
