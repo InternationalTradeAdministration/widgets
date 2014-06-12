@@ -45,7 +45,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No mrr were found, please try another selection.<p>"
+					list = "<p>No reports were found, please try another selection.<p>"
 				}
 				else {
 					$('#mrr-results').addClass('results-container');
@@ -70,7 +70,7 @@
 			},
 			error: function(error) {
 				stopSpinner(spinner);
-				alert("Error retriving mrr, please try again");
+				alert("Error retriving reports, please try again");
 			},
 			timeout:3000
 		});
