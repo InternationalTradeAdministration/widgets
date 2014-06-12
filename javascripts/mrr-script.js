@@ -58,7 +58,7 @@
 							var url = "<a class='results-link' href=" + mrr.url + " target='_blank'>" + mrr.url + "</a></p>"
 						}
 						else{
-							var url = "No mrr url provided"
+							var url = ""
 						}
 						list += "<p class='results-legend'>" + title + "<br>";
 						list += expiration_date + "<br>";
