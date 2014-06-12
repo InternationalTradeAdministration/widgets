@@ -9,7 +9,7 @@ var stateList = [["Select a State", ""],["ALABAMA",	"AL"],["ALASKA",	"AK"],["AME
 ["Armed Forces Canada",	"AE"],["Armed Forces Europe",	"AE"],["Armed Forces Middle East",	"AE"],["Armed Forces Pacific",	"AP"]];
 
 var countryList = [["Select a Country", ""],["Afghanistan", "AF"],
-["Åland Islands", AX"],
+["Åland Islands", "AX"],
 ["Albania", "AL"],
 ["Algeria", "DZ"],
 ["American Samoa", "AS"],
