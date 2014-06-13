@@ -35,7 +35,7 @@
 			if (countryIndex > 0){
 				country = countryList[countryIndex];
 			}
-			var searchParams = "&country=" + country + "&industry=" + industry;
+			var searchParams = "country=" + country + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/market_research_library/search?" + searchParams + "&callback=?";
