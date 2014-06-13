@@ -76,6 +76,38 @@
 		});
 	}
 
+function getOffices(searchParam, spinner) {
+		var url = "http://api.trade.gov/market_research_library/search?"+ searchParam + "&callback=?";
+		$.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(feed){
+				var results = feed.results;
+				if (results.length == 0){
+					list = "<p>No offices were found, please try another selection.<p>"
+				}
+				else {
+					var list = "<p class='results-title'>List of Offices</p>";
+					for (var i=0; i<=results.length-1; i++){
+						$('#mrr-results').addClass('results-container');
+						var mrr = results[i];
+						var title = mrr.title;
+						var url = mrr.url;
+						list += "<p class='results-legend'>" + title + "<br>";
+						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
+					}
+				}
+				document.getElementById("mrr-results").innerHTML = list;
+				stopSpinner(spinner);
+			},
+			error: function(error) {
+				stopSpinner(spinner);
+				alert("Error retriving events, please try again");
+			},
+			timeout:3000
+		});
+	}
+
 	function main() { 
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
