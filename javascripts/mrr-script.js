@@ -50,7 +50,7 @@
 				else {
 					$('#mrr-results').addClass('results-container');
 					var list = "<p>List of Market Research Reports</p>";
-					for (var i=0; i<=results.length-1; ){
+					for (var i=0; i<=results.length-1; i++){
 						var mrr = results[i];
 						var title = mrr.title;
 						var expiration_date = mrr.expiration_date;
