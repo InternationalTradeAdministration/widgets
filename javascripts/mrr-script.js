@@ -33,7 +33,7 @@
 				industry = industryList[industryIndex];
 			}
 			if (countryIndex > 0){
-				country = countryList[countryIndex]
+				country = countryList[countryIndex];
 			}
 			var searchParams = "country=" + country + "&industry=" + industry;
 		}
