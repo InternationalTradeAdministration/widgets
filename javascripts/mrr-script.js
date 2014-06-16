@@ -33,7 +33,7 @@
 				industry = industryList[industryIndex];
 			}
 			if (countryIndex > 0){
-				country = countryList[countryIndex][1]
+				country = countryList[countryIndex];
 			}
 			var searchParams = "country=" + country + "&industry=" + industry;
 		}
@@ -76,6 +76,38 @@
 		});
 	}
 
+function getOffices(searchParam, spinner) {
+		var url = "http://api.trade.gov/market_research_library/search?"+ searchParam + "&callback=?";
+		$.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(feed){
+				var results = feed.results;
+				if (results.length == 0){
+					list = "<p>No offices were found, please try another selection.<p>"
+				}
+				else {
+					var list = "<p class='results-title'>List of Offices</p>";
+					for (var i=0; i<=results.length-1; i++){
+						$('#mrr-results').addClass('results-container');
+						var mrr = results[i];
+						var title = mrr.title;
+						var url = mrr.url;
+						list += "<p class='results-legend'>" + title + "<br>";
+						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
+					}
+				}
+				document.getElementById("mrr-results").innerHTML = list;
+				stopSpinner(spinner);
+			},
+			error: function(error) {
+				stopSpinner(spinner);
+				alert("Error retriving events, please try again");
+			},
+			timeout:3000
+		});
+	}
+
 	function main() { 
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
@@ -92,8 +124,8 @@
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
 				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="mrr-country"></select>');
-				form += ('<button class="search-button" id="country-mrr-button"></button></div>');
+				form += ('<p><div class="select-input"><select class="search-input" id="mrr-country"></select>');
+				form += ('<button class="search-button" id="country-mrr-button"></button></div></p>');
 				document.getElementById('mrr-form').innerHTML = form;
 				$('#industry-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
@@ -110,8 +142,8 @@
 				$.each(industryList, function(val, text) {
 		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countryList, function(val, array) {
-		      $('#mrr-country').append( $('<option></option>').val(val).html(array[0]));
+				$.each(countryList, function(val, text) {
+		      $('#mrr-country').append( $('<option></option>').val(val).html(text));
 		     });
 	    });
 	}
