@@ -47,7 +47,7 @@
 
 
 	function getOffices(searchParam, spinner) {
-		var url = "http://api.trade.gov/ita_office_locations/search?"+ searchParam + "&callback=?";
+		var url = "http://api.trade.gov/trade_events/search?"+ searchParam + "&callback=?";
 		$.ajax({
 			url: url,
 			dataType: 'jsonp',
