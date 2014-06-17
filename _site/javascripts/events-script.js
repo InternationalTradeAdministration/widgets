@@ -79,7 +79,7 @@
 			$('#events-container').addClass('widget-container');
 			var form = "";				
       form += ('<p class="widget-title">Trade Events</p>');
-			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="Enter a search term" size="40">');
+			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="40">');
 			form += ('<button class="search-button" id="events-button"></button></div>');
 			document.getElementById('events-form').innerHTML = form;
 			$('#events-button').on('click', function(){
