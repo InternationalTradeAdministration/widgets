@@ -53,16 +53,9 @@
 					for (var i=0; i<=results.length-1; i++){
 						var mrr = results[i];
 						var title = mrr.title;
-						var expiration_date = mrr.expiration_date;
-						if (event.url){
-							var url = "<a class='results-link' href=" + mrr.url + " target='_blank'>" + mrr.url + "</a></p>"
-						}
-						else{
-							var url = ""
-						}
+						var url = mrr.url;
 						list += "<p class='results-legend'>" + title + "<br>";
-						list += expiration_date + "<br>";
-						list += url + "</p>";
+						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
 					}
 				}
 				document.getElementById("mrr-results").innerHTML = list;
