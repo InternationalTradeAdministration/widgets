@@ -45,11 +45,12 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No articles were found, please try another selection.<p>"
+					list = "<p>No articles were found, please try another search term.<p>"
 				}
 				else {
+					var list = "<p class='results-title'></p>";
+					articleArray = [];
 					$('#article-results').addClass('results-container');
-					var list = "<p></p>";
 					for (var i=0; i<=results.length-1; i++){
 						var article = results[i];
 						var title = article.title;
