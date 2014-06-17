@@ -45,12 +45,18 @@
 					$('#events-results').addClass('results-container');
 					for (var i=0; i<=results.length-1; i++){
 						var event = results[i];
-						var event_name = event.event_name;
-						var description = event.description;
-						var id = event.id;
-						var eventObject={event_name:event_name, description:description, id:id};
-						eventArray.push(eventObject);
-						list += "<p><a class='results-link' href='#' id='event-event_name' data-id= " + id + ">" + event_name + "</a></p>"
+						var name = event.event_name;
+						var startDate = event.start_date;
+						var endDate = event.end_date;
+						if (event.url){
+							var url = "<a class='results-link' href=" + event.url + " target='_blank'>" + event.url + "</a></p>"
+						}
+						else{
+							var url = "No event url provided"
+						}
+						list += "<p class='results-legend'>" + name + "<br>";
+						list += startDate + " to " + endDate + "<br>";
+						list += url + "</p>";
 					}
 				}
 				document.getElementById("events-results").innerHTML = list;
