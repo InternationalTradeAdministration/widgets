@@ -46,9 +46,11 @@
 					for (var i=0; i<=results.length-1; i++){
 						var article = results[i];
 						var title = article.title;
-						var update_date = article.update_date;
-						if (article.url){
-							var url = "<a class='results-link' href=" + article.url + " target='_blank'>" + article.url + "</a></p>"
+						var content = article.content;
+						var id = article.id;
+						var articleObject={title:title, content:content, id:id};
+						articleArray.push(articleObject);
+						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a></p>"
 					}
 				}
 				document.getElementById("articles-results").innerHTML = list;
