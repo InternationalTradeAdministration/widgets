@@ -40,7 +40,7 @@
 					list = "<p>No events were found, please try another search term.<p>"
 				}
 				else {
-					var list = "<p class='results-title'>Events</p>";
+					var list = "<p class='results-title'></p>";
 					eventArray = [];
 					$('#events-results').addClass('results-container');
 					for (var i=0; i<=results.length-1; i++){
