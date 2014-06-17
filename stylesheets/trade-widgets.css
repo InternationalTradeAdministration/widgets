@@ -87,7 +87,7 @@
 .form-container {
     
     background: none;
-    padding: 0;
+    padding: 0 20px 20px;
     margin:0;
     
     overflow: hidden;
