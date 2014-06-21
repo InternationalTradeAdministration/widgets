@@ -11,18 +11,18 @@
 	     main();
 	}
 	var industry = "";
-	var country = "";
+	var countries = "";
 
 	function stopSpinner(spinner){
-		$('#country-mrr-button').removeClass('search-button-clear');
+		$('#countries-mrr-button').removeClass('search-button-clear');
 		$('#industry-mrr-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
 	function getMrr(spinner){
-		var countryIndex = $('#mrr-country').val();
+		var countriesIndex = $('#mrr-countries').val();
 		var industryIndex = $('#mrr-industry').val();
-		if (countryIndex == 0 && industryIndex == 0){
+		if (countriesIndex == 0 && industryIndex == 0){
 			alert("No selection has been chosen");
 			document.getElementById("mrr-results").innerHTML = "";
 			stopSpinner(spinner);
@@ -32,10 +32,10 @@
 			if (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
-			if (countryIndex > 0){
-				country = countryList[countryIndex];
+			if (countriesIndex > 0){
+				countries = countriesList[countriesIndex];
 			}
-			var searchParams = "country=" + country + "&industry=" + industry;
+			var searchParams = "countries=" + countries + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/market_research_library/search?" + searchParams + "&callback=?";
@@ -85,15 +85,15 @@
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
 				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="mrr-country"></select>');
-				form += ('<button class="search-button" id="country-mrr-button"></button></div></p>');
+				form += ('<p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
+				form += ('<button class="search-button" id="countries-mrr-button"></button></div></p>');
 				document.getElementById('mrr-form').innerHTML = form;
 				$('#industry-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getMrr(spinner)
 					});
-				$('#country-mrr-button').on('click', function(){
+				$('#countries-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getMrr(spinner);
@@ -103,8 +103,8 @@
 				$.each(industryList, function(val, text) {
 		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countryList, function(val, text) {
-		      $('#mrr-country').append( $('<option></option>').val(val).html(text));
+				$.each(countriesList, function(val, text) {
+		      $('#mrr-countries').append( $('<option></option>').val(val).html(text));
 		     });
 	    });
 	}
