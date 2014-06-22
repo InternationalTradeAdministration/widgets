@@ -49,7 +49,7 @@
 				}
 				else {
 					$('#trade-events-results').addClass('results-container');
-					var list = "<p>List of Events</p>";
+					var list = "<p></p>";
 					for (var i=0; i<=results.length-1; i++){
 						var event = results[i];
 						var name = event.event_name;

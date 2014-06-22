@@ -41,7 +41,7 @@
 				}
 				else {
 					$('#reports-results').addClass('results-container');
-					var list = "<p class='results-title'>Market Research Reports</p>";
+					var list = "<p class='results-title'></p>";
 					for (var i=0; i<=results.length-1; i++){
 						var report = results[i];
 						var title = report.title;

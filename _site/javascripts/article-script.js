@@ -45,24 +45,20 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No articles were found, please try another selection.<p>"
+					list = "<p>No articles were found, please try another search term.<p>"
 				}
 				else {
+					var list = "<p class='results-title'></p>";
+					articleArray = [];
 					$('#article-results').addClass('results-container');
-					var list = "<p>List of Articles</p>";
 					for (var i=0; i<=results.length-1; i++){
 						var article = results[i];
 						var title = article.title;
-						var update_date = article.update_date;
-						if (article.url){
-							var url = "<a class='results-link' href=" + article.url + " target='_blank'>" + article.url + "</a></p>"
-						}
-						else{
-							var url = ""
-						}
-						list += "<p class='results-legend'>" + title + "<br>";
-						list += update_date + "<br>";
-						list += url + "</p>";
+						var content = article.content;
+						var id = article.id;
+						var articleObject={title:title, content:content, id:id};
+						articleArray.push(articleObject);
+						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a></p>"
 					}
 				}
 				document.getElementById("article-results").innerHTML = list;

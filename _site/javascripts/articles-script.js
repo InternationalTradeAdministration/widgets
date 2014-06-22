@@ -40,7 +40,7 @@
 					list = "<p>No articles were found, please try another search term.<p>"
 				}
 				else {
-					var list = "<p class='results-title'>List of Articles</p>";
+					var list = "<p class='results-title'></p>";
 					articleArray = [];
 					$('#articles-results').addClass('results-container');
 					for (var i=0; i<=results.length-1; i++){
