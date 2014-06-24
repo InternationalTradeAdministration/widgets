@@ -54,10 +54,16 @@
 					var title = art.title;
 					var content = art.content;
 					var id = art.id;
-					var articleObject={title:title, content:content, id:id};
-						articleArray.push(articleObject);
-						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a></p>"
+					if (art.url){
+						var url = "<a class='results-link' href=" + art.url + " target='_blank'>" + art.url + "</a></p>"
 					}
+					else{
+						var url = "No event url provided"
+					}
+					list += "<p class='results-legend'>" + title + "<br>";
+					list += id + " to " + content + "<br>";
+					list += url + "</p>";
+				}
 			}
 			document.getElementById("art-results").innerHTML = list;
 			$('#view-calendar-button').on('click', showCalendar);
