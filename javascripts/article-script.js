@@ -11,20 +11,20 @@
 	     main();
 	}
 	var industry = "";
-	var countries = "";
+	var country = "";
 
 	function stopSpinner(spinner){
-		$('#countries-mrr-button').removeClass('search-button-clear');
-		$('#industry-mrr-button').removeClass('search-button-clear');
+		$('#country-article-button').removeClass('search-button-clear');
+		$('#industry-article-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
-	function getMrr(spinner){
-		var countriesIndex = $('#mrr-countries').val();
-		var industryIndex = $('#mrr-industry').val();
-		if (countriesIndex == 0 && industryIndex == 0){
+	function getArticle(spinner){
+		var countryIndex = $('#article-country').val();
+		var industryIndex = $('#article-industry').val();
+		if (countryIndex == 0 && industryIndex == 0){
 			alert("No selection has been chosen");
-			document.getElementById("mrr-results").innerHTML = "";
+			document.getElementById("article-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
 		}
@@ -32,10 +32,10 @@
 			if (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
-			if (countriesIndex > 0){
-				countries = countriesList[countriesIndex][1]
+			if (countryIndex > 0){
+				country = countryList[countryIndex][1]
 			}
-			var searchParams = "countries=" + countries + "&industry=" + industry;
+			var searchParams = "country=" + country + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/trade_articles/search?" + searchParams + "&callback=?";
@@ -45,25 +45,28 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No reports were found, please try another selection.<p>"
+					list = "<p>No articles were found, please try another search term.<p>"
 				}
 				else {
-					$('#mrr-results').addClass('results-container');
-					var list = "<p></p>";
+					var list = "<p class='results-title'></p>";
+					articleArray = [];
+					$('#article-results').addClass('results-container');
 					for (var i=0; i<=results.length-1; i++){
-						var mrr = results[i];
-						var title = mrr.title;
-						var url = mrr.url;
-						list += "<p class='results-legend'>" + title + "<br>";
-						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
+						var article = results[i];
+						var title = article.title;
+						var content = article.content;
+						var id = article.id;
+						var articleObject={title:title, content:content, id:id};
+						articleArray.push(articleObject);
+						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a></p>"
 					}
 				}
-				document.getElementById("mrr-results").innerHTML = list;
+				document.getElementById("article-results").innerHTML = list;
 				stopSpinner(spinner);
 			},
 			error: function(error) {
 				stopSpinner(spinner);
-				alert("Error retriving reports, please try again");
+				alert("Error retriving articles, please try again");
 			},
 			timeout:3000
 		});
@@ -73,38 +76,38 @@
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
 					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars2.js" type="text/javascript"></script>').appendTo("head");
 					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="mrr-form" class="form-container"></div>');
-				container += ('<div id="mrr-results" class="results-container"></div>');			
-				document.getElementById('mrr-container').innerHTML = container;
-				$('#mrr-container').addClass('widget-container');
+				container += ('<div id="article-form" class="form-container"></div>');
+				container += ('<div id="article-results" class="results-container"></div>');			
+				document.getElementById('article-container').innerHTML = container;
+				$('#article-container').addClass('widget-container');
 				var form = "";				
 	      
-				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
-				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
-				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
-				document.getElementById('mrr-form').innerHTML = form;
-				$('#industry-mrr-button').on('click', function(){
+				form += ('<p><div class="select-input"><select class="search-input" id="article-industry"></select>');
+				form += ('<button class="search-button" id="industry-article-button"></button></div></p>');
+				form += ('<div class="select-input"><select class="search-input" id="article-country"></select>');
+				form += ('<button class="search-button" id="country-article-button"></button></div>');
+				document.getElementById('article-form').innerHTML = form;
+				$('#industry-article-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
-					getMrr(spinner)
+					getArticle(spinner)
 					});
-				$('#countries-mrr-button').on('click', function(){
+				$('#country-article-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
-					getMrr(spinner);
+					getArticle(spinner);
 					});
 
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
-		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
+		      $('#article-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countriesList, function(val, array) {
-		      $('#mrr-countries').append( $('<option></option>').val(val).html(array[0]));
+				$.each(countryList, function(val, array) {
+		      $('#article-country').append( $('<option></option>').val(val).html(array[0]));
 		     });
 	    });
 	}
