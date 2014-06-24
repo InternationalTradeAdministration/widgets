@@ -11,22 +11,20 @@
 	     main();
 	}
 	var industry = "";
-	var country = "";
-	
+	var countries = "";
+
 	function stopSpinner(spinner){
-		$('#country-art-button').removeClass('search-button-clear');
-		$('#industry-art-button').removeClass('search-button-clear');
+		$('#countries-mrr-button').removeClass('search-button-clear');
+		$('#industry-mrr-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
-
-
-	function getArt(spinner){
-		var countryIndex = $('#art-country').val();
-		var industryIndex = $('#art-industry').val();
-		if (countryIndex == 0 && industryIndex == 0){
+	function getMrr(spinner){
+		var countriesIndex = $('#mrr-countries').val();
+		var industryIndex = $('#mrr-industry').val();
+		if (countriesIndex == 0 && industryIndex == 0){
 			alert("No selection has been chosen");
-			document.getElementById("art-results").innerHTML = "";
+			document.getElementById("mrr-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
 		}
@@ -34,81 +32,79 @@
 			if (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
-			if (countryIndex > 0){
-				country = countryList[countryIndex][1]
+			if (countriesIndex > 0){
+				countries = countriesList[countriesIndex][1]
 			}
-			var searchParams = "country=" + country + "&industry=" + industry;
+			var searchParams = "countries=" + countries + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/trade_articles/search?" + searchParams + "&callback=?";
-		$.getJSON(url, function(feed){
-			var results = feed.results;
-			if (results.length == 0){
-				list = "<p>No events were found, please try another selection.<p>"
-			}
-			else {
-				$('#art-results').addClass('results-container');
-				var list = "<p>List of Articles<input type='submit' value ='View Calendar' id='view-calendar-button' class='view-calendar-button'></p>";
-				for (var i=0; i<=results.length-1; i++){
-					var art = results[i];
-					var title = art.title;
-					var content = art.content;
-					var id = art.id;
-					if (art.url){
-						var url = "<a class='results-link' href=" + art.url + " target='_blank'>" + art.url + "</a></p>"
-					}
-					else{
-						var url = "No event url provided"
-					}
-					list += "<p class='results-legend'>" + title + "<br>";
-					list += id + " to " + content + "<br>";
-					list += url + "</p>";
+		$.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(feed){
+				var results = feed.results;
+				if (results.length == 0){
+					list = "<p>No reports were found, please try another selection.<p>"
 				}
-			}
-			document.getElementById("art-results").innerHTML = list;
-			$('#view-calendar-button').on('click', showCalendar);
-		
-			stopSpinner(spinner);
+				else {
+					$('#mrr-results').addClass('results-container');
+					var list = "<p></p>";
+					for (var i=0; i<=results.length-1; i++){
+						var mrr = results[i];
+						var title = mrr.title;
+						var url = mrr.url;
+						list += "<p class='results-legend'>" + title + "<br>";
+						list += "<a class='results-link' href=" + url + " target='_blank'>" + url + "</a></p>";
+					}
+				}
+				document.getElementById("mrr-results").innerHTML = list;
+				stopSpinner(spinner);
+			},
+			error: function(error) {
+				stopSpinner(spinner);
+				alert("Error retriving reports, please try again");
+			},
+			timeout:3000
 		});
 	}
 
 	function main() { 
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
-				$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-				$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars2.js" type="text/javascript"></script>').appendTo("head");
-				$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="art-form" class="form-container"></div>');
-				container += ('<div id="art-results" class="results-container"></div>');			
-				document.getElementById('art-container').innerHTML = container;
-				$('#art-container').addClass('widget-container');
-				$('<div class="modal" id="calendar"></div>').appendTo("body");
+				container += ('<div id="mrr-form" class="form-container"></div>');
+				container += ('<div id="mrr-results" class="results-container"></div>');			
+				document.getElementById('mrr-container').innerHTML = container;
+				$('#mrr-container').addClass('widget-container');
 				var form = "";				
-	      form += ('<p class="widget-title">Trade Articles</p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="art-industry"></select>');
-				form += ('<button class="search-button" id="industry-art-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="art-country"></select>');
-				form += ('<button class="search-button" id="country-art-button"></button></div>');
-				document.getElementById('art-form').innerHTML = form;
-				$('#industry-art-button').on('click', function(){
+	      
+				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
+				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
+				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
+				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
+				document.getElementById('mrr-form').innerHTML = form;
+				$('#industry-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
-					getArt(spinner)
+					getMrr(spinner)
 					});
-				$('#country-art-button').on('click', function(){
+				$('#countries-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
-					getArt(spinner);
+					getMrr(spinner);
 					});
 
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
-		      $('#art-industry').append( $('<option></option>').val(val).html(text));
+		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countryList, function(val, array) {
-		      $('#art-country').append( $('<option></option>').val(val).html(array[0]));
+				$.each(countriesList, function(val, array) {
+		      $('#mrr-countries').append( $('<option></option>').val(val).html(array[0]));
 		     });
 	    });
 	}
