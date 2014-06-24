@@ -8,7 +8,7 @@ var stateList = [["Select a State", ""],["ALABAMA",	"AL"],["ALASKA",	"AK"],["AME
 ["VIRGINIA",	"VA"],["WASHINGTON",	"WA"],["WEST VIRGINIA",	"WV"],["WISCONSIN",	"WI"],["WYOMING",	"WY"],["Armed Forces Africa",	"AE"],["Armed Forces Americas",	"AA"],
 ["Armed Forces Canada",	"AE"],["Armed Forces Europe",	"AE"],["Armed Forces Middle East",	"AE"],["Armed Forces Pacific",	"AP"]];
 
-var countriesList = ["Select a Country", ["Afghanistan"],
+var countryList = ["Select a Country", ["Afghanistan"],
 ["MA"],
 ["Åland Islands"],
 ["CA"],
