@@ -11,18 +11,18 @@
 	     main();
 	}
 	var industry = "";
-	var country = "";
+	var countries = "";
 
 	function stopSpinner(spinner){
-		$('#country-trade-events-button').removeClass('search-button-clear');
+		$('#countries-trade-events-button').removeClass('search-button-clear');
 		$('#industry-trade-events-button').removeClass('search-button-clear');
 		spinner.stop();	
 	}
 
 	function getTradeEvents(spinner){
-		var countryIndex = $('#trade-events-country').val();
+		var countriesIndex = $('#trade-events-countries').val();
 		var industryIndex = $('#trade-events-industry').val();
-		if (countryIndex == 0 && industryIndex == 0){
+		if (countriesIndex == 0 && industryIndex == 0){
 			alert("No selection has been chosen");
 			document.getElementById("trade-events-results").innerHTML = "";
 			stopSpinner(spinner);
@@ -32,10 +32,10 @@
 			if (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
-			if (countryIndex > 0){
-				country = countryList[countryIndex];
+			if (countriesIndex > 0){
+				countries = countriesList[countriesIndex][1]
 			}
-			var searchParams = "country=" + country + "&industry=" + industry;
+			var searchParams = "countries=" + country + "&industry=" + industry;
 		}
 
 		var url = "http://api.trade.gov/trade_events/search?" + searchParams + "&callback=?";
@@ -81,7 +81,7 @@
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
 					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars2.js" type="text/javascript"></script>').appendTo("head");
 					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
@@ -93,15 +93,15 @@
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-industry"></select>');
 				form += ('<button class="search-button" id="industry-trade-events-button"></button></div></p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="trade-events-country"></select>');
-				form += ('<button class="search-button" id="country-trade-events-button"></button></div></p>');
+				form += ('<div class="select-input"><select class="search-input" id="trade-events-country"></select>');
+				form += ('<button class="search-button" id="country-trade-events-button"></button></div>');
 				document.getElementById('trade-events-form').innerHTML = form;
 				$('#industry-trade-events-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getTradeEvents(spinner)
 					});
-				$('#country-trade-events-button').on('click', function(){
+				$('#countries-trade-events-button').on('click', function(){
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getTradeEvents(spinner);
@@ -112,7 +112,7 @@
 		      $('#trade-events-industry').append( $('<option></option>').val(val).html(text));
 		     });
 				$.each(countryList, function(val, text) {
-		      $('#trade-events-country').append( $('<option></option>').val(val).html(text));
+		      $('#trade-events-countries').append( $('<option></option>').val(val).html(array[0]));
 		     });
 	    });
 	}
