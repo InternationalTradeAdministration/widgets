@@ -33,7 +33,7 @@
 				industry = industryList[industryIndex];
 			}
 			if (countryIndex > 0){
-				country = countryList[countryIndex];
+				country = countryList[countryIndex][1]
 			}
 			var searchParams = "country=" + country + "&industry=" + industry;
 		}
@@ -88,8 +88,8 @@
 	      
 				form += ('<p><div class="select-input"><select class="search-input" id="article-industry"></select>');
 				form += ('<button class="search-button" id="industry-article-button"></button></div></p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="article-country"></select>');
-				form += ('<button class="search-button" id="country-article-button"></button></div></p>');
+				form += ('<div class="select-input"><select class="search-input" id="article-country"></select>');
+				form += ('<button class="search-button" id="country-article-button"></button></div>');
 				document.getElementById('article-form').innerHTML = form;
 				$('#industry-article-button').on('click', function(){
 					$(this).addClass('search-button-clear');
@@ -106,8 +106,8 @@
 				$.each(industryList, function(val, text) {
 		      $('#article-industry').append( $('<option></option>').val(val).html(text));
 		     });
-				$.each(countryList, function(val, text) {
-		      $('#article-country').append( $('<option></option>').val(val).html(text));
+				$.each(countryList, function(val, array) {
+		      $('#article-country').append( $('<option></option>').val(val).html(array[0]));
 		     });
 	    });
 	}
