@@ -170,6 +170,7 @@ code, pre {
   color: #222;
   margin-bottom: 30px;
   font-size: 14px;
+  
 }
 
 code {
@@ -184,12 +185,14 @@ pre {
   color: #505050 ;
   text-shadow: none;
   overflow: auto;
+  
 }
 pre code {
   color: #505050;
   background-color: #fff;
   border: none;
   padding: 0;
+  
 }
 
 ul, ol, dl {
