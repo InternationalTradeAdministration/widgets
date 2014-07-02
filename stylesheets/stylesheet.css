@@ -54,7 +54,6 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   color: #6d6d6d;
-  width:980px;
 }
 
 a {
@@ -91,7 +90,7 @@ header h2 {
 }
 
 .inner {
-  width: 620px;
+  width: 980px;
   margin: 0 auto;
 }
 

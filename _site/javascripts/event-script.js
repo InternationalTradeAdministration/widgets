@@ -90,7 +90,7 @@
 				document.getElementById('event-container').innerHTML = container;
 				$('#event-container').addClass('widget-container');
 				var form = "";				
-	      
+	      form += ('<p class="widget-title">Trade Events</p>');
 				form += ('<p><div class="select-input"><select class="search-input" id="event-industry"></select>');
 				form += ('<button class="search-button" id="industry-event-button"></button></div></p>');
 				form += ('<div class="select-input"><select class="search-input" id="event-countries"></select>');
