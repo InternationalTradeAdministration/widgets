@@ -69,14 +69,6 @@
 		});
 	}
 
-
-function reset_form() {
-    document.forms['myform'].reset();
-	alert("Спасибо. Ваше мнение учтено.");
-}
-
-document.getElementById('ss-submit').onclick = reset_form
-
 	function main() { 
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
