@@ -88,7 +88,7 @@
 				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
 				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
-				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
+				
 				document.getElementById('mrr-form').innerHTML = form;
 				$('#industry-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
