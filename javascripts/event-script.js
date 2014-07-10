@@ -91,9 +91,9 @@
 				$('#event-container').addClass('widget-container');
 				var form = "";				
 	      form += ('<p class="widget-title">Trade Events</p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="event-industry"></select>');
+				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="event-industry"></select>');
 				form += ('<button class="search-button" id="industry-event-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="event-countries"></select>');
+				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="event-countries"></select>');
 				form += ('<button class="search-button" id="countries-event-button"></button></div>');
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
