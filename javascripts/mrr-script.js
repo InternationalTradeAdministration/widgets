@@ -69,6 +69,14 @@
 		});
 	}
 
+
+function reset_form() {
+    document.forms['myform'].reset();
+	alert("Спасибо. Ваше мнение учтено.");
+}
+
+document.getElementById('ss-submit').onclick = reset_form
+
 	function main() { 
 	    $(document).ready(function($) {
 				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
@@ -103,13 +111,7 @@
 					getMrr(spinner);
 					});
 
-				function reset_form() {
-    document.forms['myform'].reset();
-	alert("Спасибо. Ваше мнение учтено.");
-}
-
-document.getElementById('ss-submit').onclick = reset_form
-
+				
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
 		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
