@@ -85,9 +85,9 @@
 	      
 	      form += ('<p class="widget-title">Market Research Reports</p>');
 				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
-				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
+				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
 				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
-				form += ('<button class="search-button2" id="countries-mrr-button"></button></div>');
+				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
 				
 				
 				
