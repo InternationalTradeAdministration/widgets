@@ -103,6 +103,13 @@
 					getMrr(spinner);
 					});
 
+				function reset_form() {
+    document.forms['myform'].reset();
+	alert("Спасибо. Ваше мнение учтено.");
+}
+
+document.getElementById('ss-submit').onclick = reset_form
+
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
 		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));
