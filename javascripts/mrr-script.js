@@ -89,7 +89,7 @@
 				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
 				
-				document.getElementById("myForm").reset();
+				
 				
 				document.getElementById('mrr-form').innerHTML = form;
 				$('#industry-mrr-button').on('click', function(){
