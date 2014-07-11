@@ -95,7 +95,7 @@
 				form += ('<button class="search-button2" id="industry-event-button"></button></div></p>');
 				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="event-countries"></select>');
 				form += ('<button class="search-button2" id="countries-event-button"></button></div>');
-				form += ('<button class="search-button" id="countries-event-button"></button></div>');
+				form += ('</br><button class="search-button" id="countries-event-button"></button></div>');
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
 					$(this).addClass('search-button-clear');
