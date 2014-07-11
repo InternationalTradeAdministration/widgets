@@ -72,9 +72,7 @@ display: none;
   height: 25px;
   border: none;
   background: #454545;
-  background-image: url('http://ajsingh273.github.io/widgets/images/searchIcon.png');
-  background-size: contain;
-  
+color:#fff;
   background-repeat: no-repeat;
   border-radius: 0 0 0 0;
 }
