@@ -87,7 +87,7 @@
 				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
 				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
 				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
-				form += ('<button class="search-button2" id="countries-mrr-button"></button></div>');
+				form += ('<button class="search-button3" id="countries-mrr-button"></button></div>');
 				
 				
 				
