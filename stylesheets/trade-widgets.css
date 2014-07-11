@@ -112,7 +112,7 @@ color:#fff;
 .search-input, select {
     border-radius: 3px 0 0 3px;
     border: 1px solid #bbb;
-    border-right: none;
+    
     padding: 6px;
     background: #F5F7F8;
     display: inline-block;
