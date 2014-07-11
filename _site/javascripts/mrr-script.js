@@ -84,10 +84,13 @@
 				var form = "";				
 	      
 	      form += ('<p class="widget-title">Market Research Reports</p>');
-				form += ('<p><div class="select-input"><select class="search-input" id="mrr-industry"></select>');
-				form += ('<button class="search-button" id="industry-mrr-button"></button></div></p>');
-				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
+				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
+				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
+				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('<button class="search-button" id="countries-mrr-button"></button></div>');
+				
+				
+				
 				document.getElementById('mrr-form').innerHTML = form;
 				$('#industry-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
@@ -100,6 +103,7 @@
 					getMrr(spinner);
 					});
 
+				
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
 		      $('#mrr-industry').append( $('<option></option>').val(val).html(text));

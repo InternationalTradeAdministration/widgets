@@ -65,6 +65,12 @@
 display:none;
 }
 
+.search-button3{
+vertical-align:bottom;
+  width: 50px;
+  height: 50px;
+}
+
 .search-button-clear{
 	background: darkgrey;
 }
