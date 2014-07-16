@@ -79,10 +79,10 @@
 
 	function main() { 
 	    $(document).ready(function($) {
-				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
-					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+				if (!$("link[href='http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css']").length){
+					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
 				container += ('<div id="event-form" class="form-container"></div>');
@@ -94,7 +94,8 @@
 				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="event-industry"></select>');
 				form += ('<button class="search-button2" id="industry-event-button"></button></div></p>');
 				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="event-countries"></select>');
-				form += ('<button class="search-button" id="countries-event-button"></button></div>');
+				form += ('</br></br><button class="search-button3" id="countries-event-button">Filter</button></div>');
+				
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
 					$(this).addClass('search-button-clear');

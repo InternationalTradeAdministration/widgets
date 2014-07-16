@@ -88,6 +88,7 @@
 				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
 				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
+				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
 				
 				
 				
@@ -96,6 +97,11 @@
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getMrr(spinner)
+					});
+				$('#countries-mrr-button').on('click', function(){
+					$(this).addClass('search-button-clear');
+					var spinner = new Spinner(spinnerVars).spin(this);
+					getMrr(spinner);
 					});
 				$('#countries-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
