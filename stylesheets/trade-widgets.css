@@ -1,8 +1,8 @@
 .widget-container {
  width: 300px;
   margin: 0 auto;
-  @include box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
-  @include border-radius(0.35em)
+  box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
+  border-radius(0.35em);
 	
 	
 }
