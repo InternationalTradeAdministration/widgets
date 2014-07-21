@@ -1,8 +1,7 @@
 .widget-container {
 	background-color: #ffffff;
  	width: 300px;
-	box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
-  border-radius(0.35em);
+	border:5px solid red;
 	
 	
 }
