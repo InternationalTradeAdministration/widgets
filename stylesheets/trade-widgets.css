@@ -1,6 +1,8 @@
 .widget-container {
 	background-color: #ffffff;
-
+ 	width: 300px;
+	box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
+  border-radius(0.35em);
 	
 	
 }
@@ -93,8 +95,7 @@ color:#fff;
     border-radius: 2px;
     padding:0;
     width: 30%;
-    box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
- border-radius(0.35em);
+    
 }
 .results-container {
     padding: 0 20px;
