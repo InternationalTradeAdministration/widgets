@@ -73,13 +73,12 @@
 				$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 			}
 			var container = "";
-			container += ('<div id="articles-form" class="form-container"></div>');
 			container += ('<div id="articles-results" class="results-container"></div>');
+			container += ('<div id="articles-form" class="form-container"></div>');
 			document.getElementById('articles-container').innerHTML = container;
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
       form += ('<p class="widget-title">Trade Articles</p>');
-      container += ('<div id="articles-results" class="results-container"></div>');
 			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="Enter a search term" size="40">');
 			form += ('<button class="search-button" id="articles-button"></button></div>');
 			document.getElementById('articles-form').innerHTML = form;
