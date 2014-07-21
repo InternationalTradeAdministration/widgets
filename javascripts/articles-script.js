@@ -74,11 +74,10 @@
 			}
 			var container = "";
 			container += ('<div id="articles-form" class="form-container"></div>');
-			
+			container += ('<div id="articles-results" class="results-container"></div>');
 			document.getElementById('articles-container').innerHTML = container;
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
-			container += ('<div id="articles-results" class="results-container"></div>');
       form += ('<p class="widget-title">Trade Articles</p>');
 			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="Enter a search term" size="40">');
 			form += ('<button class="search-button" id="articles-button"></button></div>');
