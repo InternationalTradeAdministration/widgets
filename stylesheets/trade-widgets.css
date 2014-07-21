@@ -163,3 +163,7 @@ padding:0px;
 #trade-events-calendar{
 	padding: 10px 20px;
 }
+
+.results-link p {
+border-bottom: 1px solid #e8e8e8;
+}
