@@ -108,8 +108,6 @@ color:#fff;
     overflow:scroll;
     background: #F8F9FA;
     max-height:200px;
-    overflow: hidden;
-    position: relative;
 }
 .form-container {
     
@@ -117,7 +115,8 @@ color:#fff;
     padding: 0 0px 0px;
     margin:0;
     
-    
+    overflow: hidden;
+    position: relative;
 }
 
 .search-combo {
