@@ -118,6 +118,11 @@ color:#fff;
     overflow: hidden;
     position: relative;
 }
+
+.search-combo {
+margin:0px;
+padding:0px;
+}
 .search-input, select {
     border-radius: 3px 0 0 3px;
     border: 1px solid #bbb;
