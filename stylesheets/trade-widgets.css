@@ -13,6 +13,10 @@ border: 1px solid #e8e8e8;
 	color: #252525;
 	padding:0px 10px;
 	border-bottom: 1px solid #e8e8e8;
+	background-image:url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/p48x48/542651_10150710812397641_2004689134_n.jpg');
+	background-repeat:no-repeat;
+background-position:right top;
+background-size: 20px;
 }
 
 .leads-container {
