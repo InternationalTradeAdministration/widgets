@@ -1,7 +1,7 @@
 .widget-container {
 	background-color: #ffffff;
  	width: 300px;
- 	background:#6D98BF;
+ 	
 	  border: 1px solid;
 border-color: #e5e5e5 #dbdbdb #d2d2d2;
 -webkit-box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
@@ -96,7 +96,7 @@ color:#fff;
 }
 .widget-container {
     margin: 20px; 
-    background:none;
+    background:#6D98BF;
     border-radius: 2px;
     padding:0;
     width: 30%;
