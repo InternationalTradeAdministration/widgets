@@ -1,16 +1,22 @@
 .widget-container {
 	background-color: #ffffff;
- 	width: 500px;
-	
+ 	width: 300px;
+border: 1px solid #e8e8e8;
 	
 	
 }
 
 .widget-title {
-	font-size: 16pt;
+	font-size: 14pt;
 	font-weight:bold;
-	font-family: Garamond;
+	font-family: Futura;
 	color: #252525;
+	padding:0px 10px;
+	border-bottom: 1px solid #e8e8e8;
+	background-image:url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/p48x48/542651_10150710812397641_2004689134_n.jpg');
+	background-repeat:no-repeat;
+background-position:right center;
+background-size: 25px;
 }
 
 .leads-container {
@@ -90,33 +96,65 @@ color:#fff;
 }
 .widget-container {
     margin: 20px; 
-    background:none;
+
+    background:#fff;
     border-radius: 2px;
     padding:0;
-    width:auto;
+    width: 30%;
+    
 }
 .results-container {
-    padding: 0 20px;
+    padding: 0 0px;
     overflow:scroll;
-    background: #F8F9FA;
+    background: #fff;
+    max-height:200px;
+    font-family: Futura;
+    font-size:10px;
+}
+
+.results-container a{
+	
+    color:#000;
+    text-decoration:none;
+    font-size:12px;
+    
+}
+
+.results-container p{
+padding: 0px 20px;
+	border-bottom: 1px solid #e8e8e8;
+	padding-bottom:10px;
+
+    
+}
+.results-container a:hover{
+	
+    text-decoration:underline;
+    
+    
 }
 .form-container {
     
     background: none;
-    padding: 0 20px 20px;
+    padding: 0 0px 0px;
     margin:0;
     
     overflow: hidden;
     position: relative;
 }
+
+.search-combo {
+margin:0px;
+padding:0px;
+}
 .search-input, select {
     border-radius: 3px 0 0 3px;
-    border: 1px solid #bbb;
+    border: 5px solid #F5F7F8;
     
     padding: 6px;
-    background: #F5F7F8;
+    background: #FFF;
     display: inline-block;
-    width: 80%;
+    width: 100%;
 	max-width: 300px;
 	-webkit-appearance:none;
 	font-size: 100%;
