@@ -108,6 +108,8 @@ color:#fff;
     overflow:scroll;
     background: #F8F9FA;
     max-height:200px;
+    overflow: hidden;
+    position: relative;
 }
 .form-container {
     
@@ -115,8 +117,7 @@ color:#fff;
     padding: 0 0px 0px;
     margin:0;
     
-    overflow: hidden;
-    position: relative;
+    
 }
 
 .search-combo {
@@ -162,8 +163,4 @@ padding:0px;
 }
 #trade-events-calendar{
 	padding: 10px 20px;
-}
-
-.results-link p {
-border-bottom: 1px solid #e8e8e8;
 }
