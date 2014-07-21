@@ -78,7 +78,7 @@
 			document.getElementById('articles-container').innerHTML = container;
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
-      form += ('<p class="widget-title">Trade Articles</p>');
+      form += ('<p class="widget-title">Trade Articles <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/p48x48/542651_10150710812397641_2004689134_n.jpg" width="42" height="42" align="middle"></p>');
 			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="Enter a search term" size="40">');
 			form += ('<button class="search-button" id="articles-button"></button></div>');
 			document.getElementById('articles-form').innerHTML = form;
