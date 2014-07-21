@@ -68,10 +68,10 @@
 
 	function main() { 
     $(document).ready(function($) {
-			if (!$("link[href='http://http://ajsingh273.github.io/.github.io/widgets/stylesheets/trade-widgets.css']").length){
-				$('<script src="http://http://ajsingh273.github.io/.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-				$('<script src="http://http://ajsingh273.github.io/.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-				$('<link href="http://http://ajsingh273.github.io/.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+			if (!$("link[href='http://http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
+				$('<script src="http://http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+				$('<script src="http://http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+				$('<link href="http://http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 			}
 			var container = "";
 			container += ('<p class="widget-title">Trade Articles</p>');
