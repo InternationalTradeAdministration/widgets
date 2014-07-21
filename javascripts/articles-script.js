@@ -73,8 +73,8 @@
 				$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 			}
 			var container = "";
-			container += ('<div id="articles-form" class="form-container"></div>');
 			container += ('<div id="articles-results" class="results-container"></div>');
+			container += ('<div id="articles-form" class="form-container"></div>');
 			document.getElementById('articles-container').innerHTML = container;
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
