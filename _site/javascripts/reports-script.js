@@ -79,7 +79,7 @@
 				form += ('<button class="search-button2" id="reports-button"></button></div>');
 				document.getElementById('reports-form').innerHTML = form;
 				$('#reports-button').on('click', function(){
-					$(this).addClass('search-button-clear');
+					$(this).addClass('search-button2-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getReports(spinner);
 					});
