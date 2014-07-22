@@ -76,13 +76,9 @@
 				var form = "";				
 	      form += ('<p class="widget-title">Market Research Reports</p>');
 				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
-				form += ('<button class="search-button2" id="reports-button"></button></div>');
+				
 				document.getElementById('reports-form').innerHTML = form;
-				$('#reports-button').on('click', function(){
-					$(this).addClass('search-button2-clear');
-					var spinner = new Spinner(spinnerVars).spin(this);
-					getReports(spinner);
-					});
+			
 				$('#reports-keyword').keypress(function (e){
 				    if(e.which == 13){
 							$('#reports-button').addClass('search-button-clear');
