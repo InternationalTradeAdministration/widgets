@@ -69,12 +69,12 @@
 					$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="reports-form" class="form-container"></div>');
+				container += ('<p class="widget-title">Market Research Reports</p>');
 				container += ('<div id="reports-results" class="results-container"></div>');
+				container += ('<div id="reports-form" class="form-container"></div>');
 				document.getElementById('reports-container').innerHTML = container;
 				$('#reports-container').addClass('widget-container');
 				var form = "";				
-	      form += ('<p class="widget-title">Market Research Reports</p>');
 				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
 				form += ('<button class="search-button" id="reports-button"></button></div>');
 				document.getElementById('reports-form').innerHTML = form;
