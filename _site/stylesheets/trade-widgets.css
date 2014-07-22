@@ -55,16 +55,7 @@ background-size: 25px;
 	margin: 0;
 }
 .search-button{
-	vertical-align:top;
-  width: 25px;
-  height: 25px;
-  border: none;
-  background: #454545;
-  background-image: url('http://ajsingh273.github.io/widgets/images/searchIcon.png');
-  background-size: contain;
-  background-position: left;
-  background-repeat: no-repeat;
-  border-radius: 0 0 0 0;
+display:none;
 }
 
 .search-button2{
