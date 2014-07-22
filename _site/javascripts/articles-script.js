@@ -51,7 +51,7 @@
 						var id = article.id;
 						var articleObject={title:title, content:content, id:id};
 						articleArray.push(articleObject);
-						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title +"</a>" + "</br>" + update_date + "</p>"
+						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a>" + "</br>" + update_date + "</p>"
 					}
 				}
 				document.getElementById("articles-results").innerHTML = list;
