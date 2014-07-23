@@ -75,7 +75,7 @@
 				document.getElementById('reports-container').innerHTML = container;
 				$('#reports-container').addClass('widget-container');
 				var form = "";				
-				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
+				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="search by keyword" size="30">');
 				form += ('<button class="search-button" id="reports-button"></button></div>');
 				document.getElementById('reports-form').innerHTML = form;
 				$('#reports-button').on('click', function(){

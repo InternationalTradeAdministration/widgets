@@ -81,7 +81,7 @@
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
       
-			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="Enter a search term" size="40">');
+			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="search by keyword" size="30">');
 			form += ('<button class="search-button" id="articles-button"></button></div>');
 			document.getElementById('articles-form').innerHTML = form;
 			$('#articles-button').on('click', function(){

@@ -85,7 +85,7 @@
 			document.getElementById('events-container').innerHTML = container;
 			$('#events-container').addClass('widget-container');
 			var form = "";				
-			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="40">');
+			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="30">');
 			form += ('<button class="search-button" id="events-button"></button></div>');
 			document.getElementById('events-form').innerHTML = form;
 			$('#events-button').on('click', function(){
