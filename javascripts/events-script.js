@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No event search term entered");
+			alert("No event keyword entered");
 			document.getElementById("events-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
@@ -37,7 +37,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No events were found, please try another search term.<p>"
+					list = "<p>No events were found, please try another keyword<p>"
 				}
 				else {
 					var list = "<p class='results-title'></p>";

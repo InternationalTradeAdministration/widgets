@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No MRL search term entered");
+			alert("No report keyword entered");
 			document.getElementById("reports-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
@@ -37,7 +37,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No reports were found, please try another search term.<p>"
+					list = "<p>No reports were found, please try another keyword<p>"
 				}
 				else {
 					$('#reports-results').addClass('results-container');
@@ -55,7 +55,7 @@
 			},
 			error: function(error) {
 				stopSpinner(spinner);
-				alert("Error retriving events, please try again");
+				alert("Error retriving reports, please try again");
 			},
 			timeout:3000
 		});
