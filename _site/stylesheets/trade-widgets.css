@@ -7,7 +7,7 @@ border: 1px solid #e8e8e8;
 }
 
 .widget-title {
-	font-size: 14pt;
+	font-size: 13pt;
 	font-weight:bold;
 	font-family: Futura;
 	color: #252525;
@@ -17,6 +17,7 @@ border: 1px solid #e8e8e8;
 	background-repeat:no-repeat;
 background-position:right center;
 background-size: 50px;
+
 }
 
 .leads-container {
