@@ -256,7 +256,7 @@ var countriesList = [["Select a Country", ""], ["Afghanistan", "AF"],
 ["Zambia", "ZM"],
 ["Zimbabwe", "ZW"]];
 
-var industryList = ["","Aerospace & Defense",
+var industryList = ["Select a Industry","Aerospace & Defense",
 "Agribusiness",
 "Arts, Entertainment & Media",
 "Automotive & Ground Transportation",
