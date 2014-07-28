@@ -1,10 +1,12 @@
 .widget-container {
-	background-color: #ffffff;
+	background: #F9F9F9;
  	width: 300px;
 border: 1px solid #e8e8e8;
 	font-weight:normal;
+	  margin: 20px;
 	
 }
+
 
 .widget-title {
 	font-size: 12px;
@@ -80,15 +82,7 @@ color:#fff;
 	background: darkgrey;
 }
 
-.widget-container {
-    margin: 20px; 
 
-    background:#fff;
-    border-radius: 2px;
-    padding:0;
-    width: 30%;
-    
-}
 .results-container {
     padding: 0 0px;
     overflow:scroll;
