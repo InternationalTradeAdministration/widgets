@@ -84,9 +84,9 @@
 				var form = "";				
 	      
 	      form += ('<p class="widget-title">Market Research Reports</p>');
-				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
+				form += ('<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
 				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
-				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
+				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
 				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
 				
