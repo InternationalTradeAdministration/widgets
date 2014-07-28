@@ -38,7 +38,7 @@ background-size: 50px;
 
 	
 	font-size: 12pt;
-	font-family: Garamond;
+	font-family: inherit;
 	
 }
 
@@ -80,13 +80,6 @@ color:#fff;
 	background: darkgrey;
 }
 
-.view-calendar-button{
-	margin-left: 183px;
-	border: 1px solid #959595;
-	background: lightgrey;
-	font-size: 10pt;
-	
-}
 .widget-container {
     margin: 20px; 
 
@@ -177,6 +170,4 @@ padding:0px;
     border-right:none;
     padding-right:1px;
 }
-#trade-events-calendar{
-	padding: 10px 20px;
-}
+
