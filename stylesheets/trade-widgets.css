@@ -17,7 +17,7 @@ border: 1px solid #e8e8e8;
 	background-color:#666666;
 	border-bottom: 1px solid #e8e8e8;
 	background-image:url('../images/ita.png');
-	background-repeat:no-repeat;
+	background-repeat:no-repeat 95% 50%;
 background-position:right center;
 background-size: 60px;
 
