@@ -29,10 +29,10 @@
 			return;
 		}
 		else{
-			if (industryIndex > 0){
+			for (industryIndex > 0){
 				industry = industryList[industryIndex];
 			}
-			if (countriesIndex > 0){
+			for (countriesIndex > 0){
 				countries = countriesList[countriesIndex][1]
 			}
 			var searchParams = "countries=" + countries + "&industry=" + industry;
