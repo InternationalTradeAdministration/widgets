@@ -31,7 +31,7 @@ background-size: 50px;
 }
 
 .results-title {
-	font-size: 16pt;
+	font-size: 12px;
 
 	color: #252525;
 }
@@ -39,13 +39,13 @@ background-size: 50px;
 .results-legend {
 
 	
-	font-size: 12pt;
+	font-size: 12px;
 	font-family: inherit;
 	
 }
 
 .results-link {
-	font-size: 12pt;
+	font-size: 10px;
 
 	color: #1f53ac;
 	text-decoration: underline;
