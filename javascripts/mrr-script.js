@@ -88,7 +88,7 @@
 				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
 				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
-				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
+				
 				
 				
 				

@@ -112,7 +112,7 @@ a.button {
   border-bottom: solid 1px #b3b3b3;
   color: #303030;
   line-height: 25px;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 15px;
   padding: 12px 8px 12px 8px;
   display: block;
@@ -225,13 +225,13 @@ table {
 }
 
 th {
-  font-weight: 500;
+  font-weight: 0;
 }
 
 td {
   border: 1px solid #ebebeb;
   text-align: center; 
-  font-weight: 300;
+  font-weight: 0;
 }
 
 form {
@@ -249,7 +249,7 @@ h1 {
 
 h2 {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: normal;
   color: #303030;
   margin-bottom: 8px;
 } 
@@ -257,14 +257,14 @@ h2 {
 h3 {
   color: #d5000d;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 8px;
 } 
  
 h4 {
   font-size: 16px;
   color: #303030;
-  font-weight: bold;
+  font-weight: normal;
 } 
 
 h5 {
@@ -278,7 +278,7 @@ h6 {
 } 
 
 p {
-  font-weight: 300;
+  
   margin-bottom: 20px;
 }
  
@@ -287,7 +287,7 @@ a {
 }
 
 p a {
-  font-weight: 400;
+ 
 }
 
 blockquote {

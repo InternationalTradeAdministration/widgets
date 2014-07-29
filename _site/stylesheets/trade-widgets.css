@@ -1,22 +1,25 @@
 .widget-container {
-	background-color: #ffffff;
- 	width: 300px;
+	background: #F9F9F9;
+ 	width: 30%;
 border: 1px solid #e8e8e8;
-	
+	font-weight:normal;
+	  
 	
 }
 
+
 .widget-title {
-	font-size: 10pt;
-	
-	font-family: Futura;
-	color: #252525;
-	padding:0px 10px;
+	font-size: 12px;
+	font-weight:lighter;
+	font-family: arial,sans-serif;
+	color: #fff;
+	padding:5px 10px;
+	background-color:#666666;
 	border-bottom: 1px solid #e8e8e8;
-	background-image:url('../images/trade_url_white.png');
+	background-image:url('../images/ita.png');
 	background-repeat:no-repeat;
 background-position:right center;
-background-size: 50px;
+background-size: 55px;
 
 }
 
@@ -28,7 +31,7 @@ background-size: 50px;
 }
 
 .results-title {
-	font-size: 16pt;
+	font-size: 12px;
 
 	color: #252525;
 }
@@ -36,13 +39,13 @@ background-size: 50px;
 .results-legend {
 
 	
-	font-size: 12pt;
-	font-family: Garamond;
+	font-size: 12px;
+	font-family: inherit;
 	
 }
 
 .results-link {
-	font-size: 12pt;
+	font-size: 10px;
 
 	color: #1f53ac;
 	text-decoration: underline;
@@ -79,33 +82,18 @@ color:#fff;
 	background: darkgrey;
 }
 
-.view-calendar-button{
-	margin-left: 183px;
-	border: 1px solid #959595;
-	background: lightgrey;
-	font-size: 10pt;
-	
-}
-.widget-container {
-    margin: 20px; 
 
-    background:#fff;
-    border-radius: 2px;
-    padding:0;
-    width: 30%;
-    
-}
 .results-container {
     padding: 0 0px;
     overflow:scroll;
-    background: #fff;
+    background: #F9F9F9;
     max-height:200px;
     font-family: Futura;
     font-size:10px;
 }
 
 .results-container a{
-	
+	font-weight:normal;
     color:#000;
     text-decoration:none;
     font-size:12px;
@@ -122,7 +110,7 @@ color:#fff;
 .results-container a:hover{
 	
     text-decoration:underline;
-    
+    font-weight:normal;
     
 }
 .form-container {
@@ -176,6 +164,4 @@ padding:0px;
     border-right:none;
     padding-right:1px;
 }
-#trade-events-calendar{
-	padding: 10px 20px;
-}
+
