@@ -52,8 +52,8 @@ background-size: 55px;
 }
 
 .search-input{
-	height: 25px;
-	font-size: 12px;
+	height: 19px;
+	font-size: 10pt;
 	
 	color: #959595;
 	margin: 0;
@@ -141,7 +141,7 @@ padding:0px;
 	margin: 0;
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
-	height: 33px;
+	height: 45px;
 }
 .search-combo, .select-input {
     white-space: nowrap;
