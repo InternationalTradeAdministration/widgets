@@ -35,8 +35,17 @@
 <script src="http://ajsingh273.github.io/widgets/javascripts/events-script.js" type="text/javascript"></script>
 <div id="events-container"></div>
 
-<script src="http://ajsingh273.github.io/widgets/javascripts/event-script.js" type="text/javascript"></script>
+<form id="myForm">
+<input type="button" onclick="myFunction()" value="Reset form">
+<script src="http://ajsingh273.github.io/widgets/javascripts/event-script.js" type="text/javascript"></script></form>
 <div id="event-container"></div>
+
+<script>
+function myFunction()
+{
+document.getElementById("myForm").reset();
+}
+</script>
 
 </section>
 
