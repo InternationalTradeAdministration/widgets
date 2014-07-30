@@ -95,9 +95,12 @@
 				form += ('<button class="search-button2" id="industry-event-button"></button></div></p>');
 				form += ('<p></p><div class="select-input"><select class="search-input" id="event-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-event-button">Filter</button></div>');
-				form += ('<div><form id="myForm"><input type="button" class="search-button3" onclick="myFunction()" value="Reset"></form><script>function myFunction(){document.getElementById("myForm").reset();}</script></div>');
+				form += ('<div><form id="myForm"><input type="button" class="search-button3" onclick="myFunction()" value="Reset"></form></div>');
 				
-				
+				function myFunction()
+{
+document.getElementById("myForm").reset();
+}
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
 					$(this).addClass('search-button-clear');
