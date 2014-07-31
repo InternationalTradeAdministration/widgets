@@ -120,13 +120,3 @@
 	}
 
 })();
-
-<form id="myForm">
-<input type="button" onclick="myFunction()" value="Reset form"></form>
-
-<script>
-function myFunction()
-{
-document.getElementById("myForm").reset();
-}
-</script>
