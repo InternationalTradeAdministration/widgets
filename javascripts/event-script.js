@@ -97,12 +97,6 @@
 				form += ('</br></br><button class="search-button3" id="countries-event-button">Filter</button></div>');
 				
 				
-	function myFunction() {
-		document.getElementById("myForm").reset();
-		
-}		
-		form += ('<div><form id="myForm"><input type="button" onclick="myFunction()" value="Reset" class="search-button3"></form></div>');
-				
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
 					$(this).addClass('search-button-clear');
