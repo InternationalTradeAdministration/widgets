@@ -99,8 +99,10 @@
 				
 	function myFunction() {
 		document.getElementById("myForm").reset();
+		
+		}		
+		var form = "";	
 		form += ('<div><form id="myForm"><input type="button" onclick="myFunction()" value="Reset" class="search-button3"></form></div>');
-}
 				
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
