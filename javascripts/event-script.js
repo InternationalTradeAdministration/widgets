@@ -85,7 +85,7 @@
 					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="event-form" class="form-container"></div>');
+				container += ('<form id="myForm"><div id="event-form" class="form-container"></div><input type="button" onclick="myFunction()" value="Reset"></form><script>function myFunction(){document.getElementById("myForm").reset();}</script>');
 				container += ('<div id="event-results" class="results-container"></div>');			
 				document.getElementById('event-container').innerHTML = container;
 				$('#event-container').addClass('widget-container');
