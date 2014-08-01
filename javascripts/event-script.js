@@ -95,7 +95,7 @@
 				form += ('<button class="search-button2" id="industry-event-button"></button></div></p>');
 				form += ('<p></p><div class="select-input"><select class="search-input" id="event-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-event-button">Filter</button></div>');
-				form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="30">');
+				
 				
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
@@ -108,13 +108,7 @@
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getEvent(spinner);
 					});
-				$('#events-keyword').keypress(function (e){
-			    if(e.which == 13){
-						$('#events-button').addClass('search-button-clear');
-						target = document.getElementById('events-button');
-						var spinner = new Spinner(spinnerVars).spin(target);
-						getEvents(spinner);
-			    }
+				
 
 				//populate dropdown lists
 				$.each(industryList, function(val, text) {
