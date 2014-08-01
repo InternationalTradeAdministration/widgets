@@ -110,8 +110,8 @@
 					});
 					
 				$('#reset-event-button').on('click', function(){
-					$(this).addClass('search-button-clear');
-					var spinner = new Spinner(spinnerVars).spin(this);
+					document.getElementById("reset-event-button").reset();
+					
 					});
 
 				//populate dropdown lists
