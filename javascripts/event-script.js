@@ -95,7 +95,7 @@
 				form += ('<button class="search-button2" id="industry-event-button"></button></div></p>');
 				form += ('<p></p><div class="select-input"><select class="search-input" id="event-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-event-button">Filter</button></div>');
-				form += ('</br></br><button class="search-button3" id="reset-button">Reset</button></div>');
+				form += ('</br></br><button class="search-button3" id="reset-event-button">Reset</button></div>');
 				
 				document.getElementById('event-form').innerHTML = form;
 				$('#industry-event-button').on('click', function(){
@@ -109,8 +109,9 @@
 					getEvent(spinner);
 					});
 					
-				$('#reset-button').on('click', function(){
-					document.getElementById("reset-button").reset();
+				$('#reset-event-button').on('click', function(){
+					$(this).addClass('search-button-clear');
+					var spinner = new Spinner(spinnerVars).spin(this);
 					});
 
 				//populate dropdown lists
