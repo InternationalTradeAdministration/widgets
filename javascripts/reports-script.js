@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No MRL search term entered");
+			alert("No report keyword entered");
 			document.getElementById("reports-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
@@ -37,7 +37,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No reports were found, please try another search term.<p>"
+					list = "<p>No reports were found, please try another keyword<p>"
 				}
 				else {
 					$('#reports-results').addClass('results-container');
@@ -55,7 +55,7 @@
 			},
 			error: function(error) {
 				stopSpinner(spinner);
-				alert("Error retriving events, please try again");
+				alert("Error retriving reports, please try again");
 			},
 			timeout:3000
 		});
@@ -63,19 +63,19 @@
 
 	function main() { 
 	    $(document).ready(function($) {
-				if (!$("link[href='http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css']").length){
-					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-					$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
-				container += ('<div id="reports-form" class="form-container"></div>');
+				container += ('<p class="widget-title">Market Research Reports</p>');
 				container += ('<div id="reports-results" class="results-container"></div>');
+				container += ('<div id="reports-form" class="form-container"></div>');
 				document.getElementById('reports-container').innerHTML = container;
 				$('#reports-container').addClass('widget-container');
 				var form = "";				
-	      form += ('<p class="widget-title">Market Research Reports</p>');
-				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="Enter a search term" size="40">');
+				form += ('<div><input class="search-input" type="text" id="reports-keyword" placeholder="search by keyword" size="30">');
 				form += ('<button class="search-button" id="reports-button"></button></div>');
 				document.getElementById('reports-form').innerHTML = form;
 				$('#reports-button').on('click', function(){

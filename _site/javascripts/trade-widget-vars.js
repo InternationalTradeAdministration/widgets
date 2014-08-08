@@ -8,7 +8,7 @@ var stateList = [["Select a State", ""],["ALABAMA",	"AL"],["ALASKA",	"AK"],["AME
 ["VIRGINIA",	"VA"],["WASHINGTON",	"WA"],["WEST VIRGINIA",	"WV"],["WISCONSIN",	"WI"],["WYOMING",	"WY"],["Armed Forces Africa",	"AE"],["Armed Forces Americas",	"AA"],
 ["Armed Forces Canada",	"AE"],["Armed Forces Europe",	"AE"],["Armed Forces Middle East",	"AE"],["Armed Forces Pacific",	"AP"]];
 
-var countriesList = [["", ""], ["Afghanistan", "AF"],
+var countriesList = [["Select a Country", ""], ["Afghanistan", "AF"], 
 ["Åland Islands", "AX"],
 ["Albania", "AL"],
 ["Algeria", "DZ"],
@@ -256,7 +256,7 @@ var countriesList = [["", ""], ["Afghanistan", "AF"],
 ["Zambia", "ZM"],
 ["Zimbabwe", "ZW"]];
 
-var industryList = ["","Aerospace & Defense",
+var industryList = ["Select a Industry","Aerospace & Defense",
 "Agribusiness",
 "Arts, Entertainment & Media",
 "Automotive & Ground Transportation",

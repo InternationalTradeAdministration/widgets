@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No article search term entered");
+			alert("No article keyword entered");
 			document.getElementById("articles-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
@@ -37,7 +37,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No articles were found, please try another search term.<p>"
+					list = "<p>No articles were found, please try another keyword.<p>"
 				}
 				else {
 					var list = "<p class='results-title'></p>";
@@ -46,11 +46,12 @@
 					for (var i=0; i<=results.length-1; i++){
 						var article = results[i];
 						var title = article.title;
+						var update_date = article.update_date;
 						var content = article.content;
 						var id = article.id;
 						var articleObject={title:title, content:content, id:id};
 						articleArray.push(articleObject);
-						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a></p>"
+						list += "<p><a class='results-link' href='#' id='article-title' data-id= " + id + ">" + title + "</a>" + "</br>" + update_date + "</p>"
 					}
 				}
 				document.getElementById("articles-results").innerHTML = list;
@@ -73,13 +74,14 @@
 				$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 			}
 			var container = "";
-			container += ('<div id="articles-form" class="form-container"></div>');
+			container += ('<p class="widget-title">Trade Articles</p>');
 			container += ('<div id="articles-results" class="results-container"></div>');
+			container += ('<div id="articles-form" class="form-container"></div>');
 			document.getElementById('articles-container').innerHTML = container;
 			$('#articles-container').addClass('widget-container');
 			var form = "";				
-      form += ('<p class="widget-title">Trade Articles</p>');
-			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="Enter a search term" size="40">');
+      
+			form += ('<div class="search-combo"><input class="search-input" type="text" id="articles-keyword" placeholder="search by keyword" size="30">');
 			form += ('<button class="search-button" id="articles-button"></button></div>');
 			document.getElementById('articles-form').innerHTML = form;
 			$('#articles-button').on('click', function(){

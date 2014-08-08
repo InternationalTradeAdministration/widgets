@@ -25,7 +25,7 @@
 			url += keyword;
 		}
 		else {
-			alert("No event search term entered");
+			alert("No event keyword entered");
 			document.getElementById("events-results").innerHTML = "";
 			stopSpinner(spinner);
 			return;
@@ -37,7 +37,7 @@
 			success: function(feed){
 				var results = feed.results;
 				if (results.length == 0){
-					list = "<p>No events were found, please try another search term.<p>"
+					list = "<p>No events were found, please try another keyword<p>"
 				}
 				else {
 					var list = "<p class='results-title'></p>";
@@ -73,19 +73,19 @@
 
 	function main() { 
     $(document).ready(function($) {
-			if (!$("link[href='stylesheets/trade-widgets.css']").length){
-				$('<script src="javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-				$('<script src="javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-				$('<link href="stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
-			}
+			if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+				}
 			var container = "";
-			container += ('<div id="events-form" class="form-container"></div>');
+			container += ('<p class="widget-title">Trade Events</p>');
 			container += ('<div id="events-results" class="results-container"></div>');
+			container += ('<div id="events-form" class="form-container"></div>');
 			document.getElementById('events-container').innerHTML = container;
 			$('#events-container').addClass('widget-container');
 			var form = "";				
-      form += ('<p class="widget-title">Trade Events</p>');
-			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="40">');
+			form += ('<div class="search-combo"><input class="search-input" type="text" id="events-keyword" placeholder="search by keyword" size="30">');
 			form += ('<button class="search-button" id="events-button"></button></div>');
 			document.getElementById('events-form').innerHTML = form;
 			$('#events-button').on('click', function(){

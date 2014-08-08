@@ -71,10 +71,10 @@
 
 	function main() { 
 	    $(document).ready(function($) {
-				if (!$("link[href='http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css']").length){
-					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
-					$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
-					$('<link href="http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
+				if (!$("link[href='http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css']").length){
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
+					$('<script src="http://ajsingh273.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
+					$('<link href="http://ajsingh273.github.io/widgets/stylesheets/trade-widgets.css" rel="stylesheet">').appendTo("head");
 				}
 				var container = "";
 				container += ('<div id="mrr-form" class="form-container"></div>');
@@ -84,10 +84,11 @@
 				var form = "";				
 	      
 	      form += ('<p class="widget-title">Market Research Reports</p>');
-				form += ('<p>Select an Industry<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
+				form += ('<div class="select-input"><select class="search-input" id="mrr-industry"></select>');
 				form += ('<button class="search-button2" id="industry-mrr-button"></button></div></p>');
-				form += ('<p>Select a Country</p><div class="select-input"><select class="search-input" id="mrr-countries"></select>');
+				form += ('<div class="select-input"><select class="search-input" id="mrr-countries"></select>');
 				form += ('</br></br><button class="search-button3" id="countries-mrr-button">Filter</button></div>');
+				
 				
 				
 				
@@ -96,6 +97,11 @@
 					$(this).addClass('search-button-clear');
 					var spinner = new Spinner(spinnerVars).spin(this);
 					getMrr(spinner)
+					});
+				$('#countries-mrr-button').on('click', function(){
+					$(this).addClass('search-button-clear');
+					var spinner = new Spinner(spinnerVars).spin(this);
+					getMrr(spinner);
 					});
 				$('#countries-mrr-button').on('click', function(){
 					$(this).addClass('search-button-clear');
