@@ -68,6 +68,7 @@
 
 	function main() { 
     $(document).ready(function($) {
+    
 			if (!$("link[href='http://internationaltradeadministration.github.io/widgets/stylesheets/trade-widgets.css']").length){
 				$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/spin.js" type="text/javascript"></script>').appendTo("head");
 				$('<script src="http://internationaltradeadministration.github.io/widgets/javascripts/trade-widget-vars.js" type="text/javascript"></script>').appendTo("head");
